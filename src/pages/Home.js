@@ -1,19 +1,25 @@
 import React from 'react';
-import { Rating } from 'semantic-ui-react';
-import logo from './../img/icon.png';
+// import logo from './../img/icon.png';
 
 class Home extends React.Component {
   render () {
     return (
-      <div>
-        <img
-          alt=''
-          src={logo}
-          width='92'
-          height='auto'
-          className='d-inline-block align-middle'
-        />
-        <Rating icon='star' defaultRating={4} maxRating={5} />
+      <div className='timeline'>
+        <div className='timeline-item' id='timeline-example-1'>
+          <div className='timeline-left'>
+            <a className='timeline-icon' href='#timeline-example-1' />
+          </div>
+          <div className='timeline-content' />
+        </div>
+        <div className='timeline-item' id='timeline-example-2'>
+          <div className='timeline-left'>
+            <a className='timeline-icon icon-lg' href='#timeline-example-2'>
+              <i className='icon icon-check' />
+            </a>
+          </div>
+          <div className='timeline-content' />
+        </div>
+        ...
       </div>
     );
   }

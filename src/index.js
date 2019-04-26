@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'semantic-ui-css/semantic.min.css';
-import './index.css';
+import './css/spectre.min.css';
+import './css/spectre-exp.min.css';
+import './css/spectre-icons.min.css';
+import './css/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
