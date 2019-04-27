@@ -10,6 +10,10 @@ const Header = styled.header`
   background: #252525;
 `;
 
+const HeaderSection = styled.header`
+  margin-right: 10px;
+`;
+
 const LogoLarge = styled.img`
   height: 55px;
   width: auto;
@@ -19,6 +23,11 @@ const LogoLarge = styled.img`
   @media (max-width: 750px) {
     display: none;
   }
+`;
+
+const ProfileMenuHolder = styled.ul`
+  left: -80px !important;
+  top: 110% !important;
 `;
 
 const LogoSmall = styled.img`
@@ -87,19 +96,46 @@ class NavMenu extends React.Component {
   }
   loginUser () {
     document.getElementById('modal-f-b1').classList.add('loading');
+    const data = JSON.stringify({
+      email: document.getElementById('input-example-8').value,
+      password: document.getElementById('input-example-12').value
+    });
     axios
-      .get('http://104.248.214.65:5001/healthcheck')
+      .post('http://104.248.214.65:5001/account/login', data, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
       .then(function (response) {
         // handle success
-        if (response.data.status === 'success') {
+        if (response.data.firstname !== undefined) {
           document.getElementById('modal-f-b1').classList.remove('loading');
-          window.open('/profile');
+          utils.loginUser(
+            response.data.firstname,
+            response.data.lastname,
+            document.getElementById('input-example-8').value,
+            response.data.picture === 'NULL' ? null : response.data.picture,
+            response.data.id
+          );
+
+          window.open('/dashboard', '_self');
+
+          // self.props.history.push('/dashboard');
+        } else {
+          alert('Account details are invalid');
         }
       })
       .catch(function (error) {
         // handle error
         console.log(error);
       });
+  }
+  componentDidMount () {
+    if (!utils.checkLogin()) {
+      document
+        .getElementById('logout-btn')
+        .addEventListener('click', utils.logoutUser);
+    }
   }
 
   render () {
@@ -128,7 +164,43 @@ class NavMenu extends React.Component {
               Login
             </LoginBtn>
           ) : (
-            ''
+            <HeaderSection>
+              <figure
+                className='avatar avatar-lg'
+                data-initial={`${utils.getDetails('fn')[0]}${
+                  utils.getDetails('ln')[0]
+                }`}
+                style={{ backgroundColor: '#5755d9' }}
+              />
+              <div className='dropdown'>
+                <a
+                  className='btn btn-link text-secondary dropdown-toggle'
+                  tabIndex='0'
+                >
+                  {utils.getDetails('fn')} <i className='icon icon-caret' />
+                </a>
+                <ProfileMenuHolder className='menu'>
+                  <li className='menu-item'>
+                    <a href='#dropdowns'>Dashboard</a>
+                  </li>
+                  <li className='menu-item'>
+                    <a href='#dropdowns'>Profile</a>
+                  </li>
+                  <li className='menu-item'>
+                    <a href='#dropdowns'>Write Review</a>
+                  </li>
+                  <li className='menu-item'>
+                    <a href='#dropdowns'>Keys Manage</a>
+                  </li>
+                  <li className='menu-item'>
+                    <a href='#dropdowns'>Settings</a>
+                  </li>
+                  <li className='menu-item'>
+                    <a id='logout-btn'>Logout</a>
+                  </li>
+                </ProfileMenuHolder>
+              </div>
+            </HeaderSection>
           )}
         </section>
       </Header>

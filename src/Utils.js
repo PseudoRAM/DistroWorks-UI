@@ -25,4 +25,21 @@ export default class Utils {
   checkLogin () {
     return !(localStorage.getItem('loggedIn') === 't');
   }
+
+  loginUser (firstName, lastName, email, pic, id) {
+    localStorage.setItem('fn', firstName);
+    localStorage.setItem('ln', lastName);
+    localStorage.setItem('id', id);
+    localStorage.setItem('email', email);
+    localStorage.setItem('pic', pic);
+    localStorage.setItem('loggedIn', 't');
+  }
+  logoutUser () {
+    localStorage.setItem('loggedIn', 'f');
+    window.open('/', '_self');
+  }
+
+  getDetails (location) {
+    return localStorage.getItem(location);
+  }
 }
