@@ -15,10 +15,30 @@
       content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"
     />
     <link rel="manifest" href="manifest.json" />
-    <title>React Beast</title>
+    <title>JobTrust</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="modal-inject">
+      <div class="modal" id="jobtrust-modal" style="display: none">
+        <a id="modal-close-btn-2" class="modal-overlay" aria-label="Close"></a>
+        <div class="modal-container">
+          <div class="modal-header">
+            <a
+              id="modal-close-btn-3"
+              class="btn btn-clear float-right"
+              aria-label="Close"
+            ></a>
+            <div class="modal-title h5" id="modal-t"></div>
+          </div>
+          <div class="modal-body"><div class="content" id="modal-c"></div></div>
+          <div class="modal-footer" id="modal-f">
+            <button class="btn btn-primary" id="modal-f-b1"></button>
+            <a class="btn btn-link" id="modal-close-btn-1">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="root"></div>
 
     <script type="text/javascript" src="cordova.js"></script>

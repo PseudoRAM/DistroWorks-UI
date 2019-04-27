@@ -9,6 +9,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "cordova-android": "^7.1.4",
     "cordova-browser": "^5.0.4",
@@ -32,7 +33,8 @@
     "eject": "react-scripts eject",
     "run-cordova-web": "webpack --mode production && cordova run browser",
     "run-web": "webpack-dev-server --mode development",
-    "build-web": "webpack --mode production && cordova build browser"
+    "build-web": "webpack --mode production && cordova build browser",
+    "run-android": "webpack --mode development && cordova run android"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -8,7 +8,7 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.bacpoc.found"
+      "PACKAGE_NAME": "com.distroworks.jobtrust"
     }
   },
   "dependent_plugins": {}
