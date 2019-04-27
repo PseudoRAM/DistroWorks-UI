@@ -1,8 +1,8 @@
 {
-  "name": "com.bacpoc.found",
-  "displayName": "Found",
+  "name": "com.distroworks.jobtrust",
+  "displayName": "JobTrust",
   "version": "0.1.0",
-  "description": "A modern solution to your lost and found needs",
+  "description": "The secure way to manage job reviews",
   "private": true,
   "main": "index.js",
   "dependencies": {
