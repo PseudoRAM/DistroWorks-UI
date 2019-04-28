@@ -26,6 +26,24 @@ export default class Utils {
     return !(localStorage.getItem('loggedIn') === 't');
   }
 
+  getMonth (monthNum) {
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ];
+    return months[monthNum];
+  }
+
   loginUser (firstName, lastName, email, pic, id) {
     localStorage.setItem('fn', firstName);
     localStorage.setItem('ln', lastName);

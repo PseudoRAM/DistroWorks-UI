@@ -6,7 +6,7 @@ import Profile from './pages/Profile';
 import Dashboard from './pages/Dashboard';
 import ReviewManage from './pages/ReviewManage';
 import KeysManage from './pages/KeysManage';
-import Settings from './pages/Settings';
+import Search from './pages/Search';
 import Main from './pages/Main';
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
               <Route exact path='/dashboard' component={Dashboard} />
               <Route exact path='/manage-reviews' component={ReviewManage} />
               <Route exact path='/manage-keys' component={KeysManage} />
-              <Route exact path='/settings' component={Settings} />
+              <Route exact path='/search' component={Search} />
               <Route path='/' render={props => <Home {...props} />} />
             </Switch>
           </div>

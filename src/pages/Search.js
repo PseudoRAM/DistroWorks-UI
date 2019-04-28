@@ -23,7 +23,7 @@ const BodyHolder = styled.div`
   padding-top: 10px !important;
 `;
 
-class Profile extends React.Component {
+class Search extends React.Component {
   render () {
     return (
       <div>
@@ -35,7 +35,6 @@ class Profile extends React.Component {
                 fn={utils.getDetails('fn')}
                 ln={utils.getDetails('ln')}
                 email={utils.getDetails('email')}
-                editMode
               />
             </div>
 
@@ -64,4 +63,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default Search;

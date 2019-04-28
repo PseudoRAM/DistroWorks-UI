@@ -4,6 +4,8 @@ import logoLarge from './../img/icon_large.png';
 import logoSmall from './../img/icon_small.png';
 import Utils from './../Utils';
 import axios from 'axios';
+
+import { Link } from 'react-router-dom';
 const utils = new Utils();
 
 const Header = styled.header`
@@ -142,15 +144,12 @@ class NavMenu extends React.Component {
     return (
       <Header className='navbar'>
         <section className='navbar-section'>
-          <a href='...' className='navbar-brand mr-2'>
+          <a href='/' className='navbar-brand mr-2'>
             <LogoLarge src={logoLarge} alt='Logo' />
             <LogoSmall src={logoSmall} alt='Logo' />
           </a>
-          <a href='...' className='btn btn-link text-gray'>
+          <a href='/' className='btn btn-link text-gray'>
             Home
-          </a>
-          <a href='...' className='btn btn-link text-gray'>
-            About
           </a>
         </section>
         <section className='navbar-section'>
@@ -181,19 +180,16 @@ class NavMenu extends React.Component {
                 </a>
                 <ProfileMenuHolder className='menu'>
                   <li className='menu-item'>
-                    <a href='#dropdowns'>Dashboard</a>
+                    <Link to='/dashboard'>Dashboard</Link>
                   </li>
                   <li className='menu-item'>
-                    <a href='#dropdowns'>Profile</a>
+                    <Link to='/profile'>Profile</Link>
                   </li>
                   <li className='menu-item'>
-                    <a href='#dropdowns'>Write Review</a>
+                    <Link to='/manage-reviews'>Write Recommendation</Link>
                   </li>
                   <li className='menu-item'>
-                    <a href='#dropdowns'>Keys Manage</a>
-                  </li>
-                  <li className='menu-item'>
-                    <a href='#dropdowns'>Settings</a>
+                    <Link to='/manage-keys'>Keys Manage</Link>
                   </li>
                   <li className='menu-item'>
                     <a id='logout-btn'>Logout</a>
