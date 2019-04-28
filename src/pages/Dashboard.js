@@ -155,10 +155,12 @@ class Dashboard extends React.Component {
     this.getCards = this.getCards.bind(this);
     this.positionAdd = this.positionAdd.bind(this);
     this.fetchExpDetails = this.fetchExpDetails.bind(this);
+    this.fetchReviewDetails = this.fetchReviewDetails.bind(this);
     this.removeCard = this.removeCard.bind(this);
   }
   componentDidMount () {
     this.fetchExpDetails();
+    this.fetchReviewDetails();
   }
   removeCard (pos) {
     const self = this;
@@ -182,6 +184,30 @@ class Dashboard extends React.Component {
         console.log(error);
       });
   }
+  createJobList (data) {}
+  fetchReviewDetails () {
+    const self = this;
+    const jobList = [];
+
+    axios
+      .get('http://104.248.214.65:5001/review/list')
+      .then(function (response) {
+        // handle success
+        for (let i = 0; i < response.data.result.length; i++) {
+          if (response.data.result[i][0] + '' === localStorage.getItem('id')) {
+            jobList.push(response.data.result[i]);
+          }
+        }
+
+        self.createJobList(jobList);
+        // self.props.history.push('/dashboard');
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  }
+
   fetchExpDetails () {
     const self = this;
     axios

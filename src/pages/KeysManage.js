@@ -212,15 +212,16 @@ class KeysManage extends React.Component {
               </div>
             </div>
             <div className='panel-body'>
+              'Elin',
               {createReviewerCard(
-                'Jesse',
-                'Brown',
+                'Elin',
+                'Wicks',
                 'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
-                'Solution Design',
-                'Tesla',
-                '1 Jan 2018'
+                'UI Developer',
+                'Telstra',
+                '25 June 2019'
               )}
-              {createReviewerHash('SDHJGF527KADFH72', '1 Jan 2018')}
+              {createReviewerHash('SDHJGF527KADFH72', '3 Jan 2019')}
             </div>
             <div className='panel-footer'>
               <button className='btn btn-primary btn-block'>

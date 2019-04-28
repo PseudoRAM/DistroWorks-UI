@@ -161,6 +161,9 @@ const addPosition = (
 };
 
 class Timeline extends React.Component {
+  constructor (props) {
+    super(props);
+  }
   render () {
     return <Holder className='timeline'>{getPositions(false)}</Holder>;
   }

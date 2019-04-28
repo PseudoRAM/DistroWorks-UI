@@ -50,22 +50,39 @@ const PreviousReview = styled.p`
 const getAvail = (amount = null) => {
   if (amount !== null) {
     const list = [];
-    for (let i = 0; i < amount; i++) {
-      const pic =
-        'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg';
-      list.push(
-        createRevieweeCard(
-          'Jesse',
-          'Brown',
-          pic,
-          'Solution Design',
-          'Tesla',
-          '1 Jan 2018',
-          'Jesse is a pro-active and hard working individual who is always active in the work place community and very dugiligent.',
-          '3 Jan 2018'
-        )
-      );
-    }
+    list.push(
+      createRevieweeCard(
+        'Elin',
+        'Wicks',
+        'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
+        'UI Developer',
+        'Telstra',
+        '23 June 2019',
+        'Elin is an amazing colleague to work with. She has the right mantality and did a great job developing p2p technology in the telco.',
+        '24 June 2019'
+      )
+    );
+    list.push(
+      createRevieweeCard(
+        'Charis',
+        'Coles',
+        'https://ionenewsone.files.wordpress.com/2016/02/1455821428328.png',
+        'Solution Designer',
+        'Telstra',
+        '27 April 2019',
+        'Charis has been an amazing asset to the Accenture team in Sydney. He has worked amazingly in the 360 automation team.',
+        '29 April 2019'
+      )
+    );
+    list.push(
+      createRevieweeCard(
+        'Evelyn',
+        'Thomas',
+        'http://events-ecsel.eu/images/a4d352e56bfab79d60c482f07f9198d6.jpg',
+        'Solution Designer',
+        'Westpac'
+      )
+    );
     return list;
   } else {
     return (
@@ -111,10 +128,7 @@ const createRevieweeCard = (
       <div className='tile-icon'>
         <div className='example-tile-icon'>
           <figure className='avatar avatar-lg'>
-            <img
-              src='https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg'
-              alt='Avatar'
-            />
+            <img src={profile} alt='Avatar' />
           </figure>
         </div>
       </div>

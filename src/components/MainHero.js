@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeroHolder = styled.div`
   height: calc(100vh - 62px);
@@ -55,10 +56,12 @@ class MainHero extends React.Component {
               className='form-input input-lg'
               type='text'
               placeholder='Search key'
-            />
-            <SerchButton className='btn input-group-btn btn-lg'>
-              <i className='icon icon-search' />
-            </SerchButton>
+            />{' '}
+            <Link to='/search'>
+              <SerchButton className='btn input-group-btn btn-lg'>
+                <i className='icon icon-search' />
+              </SerchButton>
+            </Link>
           </SearchGroup>
         </HeroBody>
       </HeroHolder>
